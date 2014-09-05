@@ -52,21 +52,23 @@ function getMeters(callback) {
         numMeters = data.length;
         for (var i = 0; i < data.length; i++) {
             var obj = {
-                type: 'state',
+                type:       'state',
                 common: {
-                    name: (data[i].label == "Teridian" ? 'BEM Gesamtverbrauch' : 'BEM ' + data[i].label) + ' ' + data[i].serial + ":" + data[i].model + ":" + data[i].type,
-                    unit: 'W',
-                    type: 'number',
-                    role: 'value.power'
+                    name:   (data[i].label == "Teridian" ? 'Gesamtverbrauch' : data[i].label),
+                    unit:   'W',
+                    type:   'number',
+                    role:   'value.power'
                 },
                 native: {
-
+                    label:  data[i].label,
+                    serial: data[i].serial,
+                    model:  data[i].model,
+                    type:   data[i].type
                 }
-
             };
-
+            adapter.log.info('add/update object ' + data[i].serial);
             adapter.setObject(data[i].serial, obj);
-
+            meters[i] = data[i].serial;
         }
         startLoop();
 
@@ -82,9 +84,12 @@ function startLoop() {
 
 function getValue(meter_id, callback) {
     request.post({
+
         jar: cookieJar,
         url: 'http://' + adapter.config.host + '/mum-webservice/consumption.php?meter_id=' + meter_id
+
     }, function (err, res, body) {
+
         var data = JSON.parse(body);
         if (data.authentication == false) {
             adapter.log.error("auth failure");
@@ -93,14 +98,12 @@ function getValue(meter_id, callback) {
         }
 
         var idx = ('0' + (meter_id + 1)).slice(-2);
-        adapter.log.info('getValue', meter_id, parseFloat((data[idx + "_power"] * 1000).toFixed(1)));
-        //socket.emit('setState', [meters[meter_id], parseFloat((data[idx + "_power"] * 1000).toFixed(1)), null, true]);
+        adapter.setState(meters[meter_id], parseFloat((data[idx + "_power"] * 1000).toFixed(1)))
+
         callback();
+
     });
 }
-
-
-
 
 
 function stop() {

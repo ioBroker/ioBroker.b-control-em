@@ -1,13 +1,18 @@
 {
     "common": {
         "name":                     "b-control-em",
-        "version":                  "0.0.1",
+        "version":                  "0.0.2",
         "title":                    "B-control Energy Manager",
         "desc":                     "Polls data from B-control Energy Manager",
         "platform":                 "javascript/Node.js",
         "mode":                     "daemon",
         "icon":                     "bcontrol.png",
-        "loglevel":                 "info"
+        "loglevel":                 "info",
+        "authors": [
+            "hobbyquaker <hq@ccu.io>"
+        ],
+        "license":                  "MIT",
+        "readme":                   "https://github.com/ioBroker/ioBroker.b-control-em/blob/master/README.md"
     },
     "native": {
         "host": "172.16.23.138",
