@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "dependencies": {
+    "request": "~2.42.0"
+  }
+}

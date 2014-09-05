@@ -1,0 +1,44 @@
+<html>
+
+<link rel="stylesheet" type="text/css" href="../../lib/css/themes/jquery-ui/redmond/jquery-ui.min.css"/>
+<script type="text/javascript" src="../../lib/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../../socket.io/socket.io.js"></script>
+<script type="text/javascript" src="../../lib/js/jquery-ui-1.10.3.full.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../../css/adapter.css"/>
+<script type="text/javascript" src="../../js/translate.js"></script>
+<script type="text/javascript" src="../../js/adapter-settings.js"></script>
+
+<script type="text/javascript">
+
+     function load(settings) {
+        for (var key in settings) {
+            // example: select elements with id=key and class=value and insert value
+            $('#' + key + '.value').val(settings[key]);
+        }
+    }
+
+    function save(callback) {
+        var obj = {};
+        $('.value').each(function () {
+            var $this = $(this);
+            obj[$this.attr('id')] = $this.val();
+        });
+        callback(obj);
+    }
+</script>
+
+<div id="adapter-container">
+
+    <table><tr>
+        <td><img src="example.png"/></td>
+        <td><h3 class="translate">B-control EM</h3></td>
+    </tr></table>
+    <p>
+        <span class="translate">host</span> <input class="value" id="host"/><br>
+        <span class="translate">pause</span> <input class="value" id="pause"/><br>
+        <span class="translate">password</span> <input class="value" id="pass"/><br>
+    </p>
+
+</div>
+</html>

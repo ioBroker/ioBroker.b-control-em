@@ -1,0 +1,20 @@
+{
+    "common": {
+        "name":                     "b-control-em",
+        "version":                  "0.0.1",
+        "title":                    "B-control Energy Manager",
+        "desc":                     "Polls data from B-control Energy Manager",
+        "platform":                 "javascript/Node.js",
+        "mode":                     "daemon",
+        "icon":                     "bcontrol.png",
+        "loglevel":                 "info"
+    },
+    "native": {
+        "host": "172.16.23.138",
+        "pause": 6500,
+        "pass": ""
+    },
+    "objects": [
+
+    ]
+}
