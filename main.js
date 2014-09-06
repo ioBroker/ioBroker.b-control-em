@@ -67,7 +67,7 @@ function getMeters(callback) {
                 }
             };
             adapter.log.info('add/update object ' + data[i].serial);
-            adapter.setObject(data[i].serial, obj);
+            adapter.extendObject(data[i].serial, obj);
             meters[i] = data[i].serial;
         }
         startLoop();

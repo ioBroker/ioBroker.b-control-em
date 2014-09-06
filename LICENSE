@@ -1,18 +1,3 @@
-# ioBroker.b-control-em
-
-[B-Control](http://www.b-control.com/) Energy Manager
-
-
-
-
-## Changelog
-
-#### 0.0.3
-
-* (hobbyquaker) extendObject instead of setObject
-
-## License
-
 The MIT License (MIT)
 
 Copyright (c) 2014 hobbyquaker
