@@ -7,6 +7,7 @@
         "platform":                 "javascript/Node.js",
         "mode":                     "daemon",
         "icon":                     "bcontrol.png",
+        "extIcon":                  "https://raw.githubusercontent.com/ioBroker/ioBroker.b-control-em/master/admin/bcontrol.jpeg",
         "loglevel":                 "info",
         "authors": [
             "hobbyquaker <hq@ccu.io>"
