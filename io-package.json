@@ -7,13 +7,14 @@
         "platform":                 "javascript/Node.js",
         "mode":                     "daemon",
         "icon":                     "bcontrol.png",
-        "extIcon":                  "https://raw.githubusercontent.com/ioBroker/ioBroker.b-control-em/master/admin/bcontrol.jpeg",
+        "extIcon":                  "https://raw.githubusercontent.com/ioBroker/ioBroker.b-control-em/master/admin/bcontrol.png",
         "loglevel":                 "info",
         "authors": [
             "hobbyquaker <hq@ccu.io>"
         ],
         "license":                  "MIT",
-        "readme":                   "https://github.com/ioBroker/ioBroker.b-control-em/blob/master/README.md"
+        "readme":                   "https://github.com/ioBroker/ioBroker.b-control-em/blob/master/README.md",
+        "keywords":                 ["B-control", "bcontrol", "energy", "manager", "Energy Manager", "Busch-Jäger", "EM", "metering", "power", "consumption", "smartmeter"]
     },
     "native": {
         "host": "172.16.23.138",
