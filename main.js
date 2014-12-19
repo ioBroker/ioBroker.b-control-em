@@ -10,7 +10,7 @@ var numMeters;
 
 var adapter = require(__dirname + '/../../lib/adapter.js')({
 
-    name:           'b-control-em',
+    name: 'b-control-em',
 
     ready: function () {
         getAuthCookie(getMeters);
@@ -41,7 +41,7 @@ function getMeters(callback) {
     }, function (err, res, body) {
         var data = JSON.parse(body);
         data = data.meters;
-        if (data.authentication == false) {
+        if (data.authentication === false || data.authentication === "false") {
             adapter.log.error("auth failure");
             setTimeout(function () {
                 getAuthCookie(getMeters);
@@ -91,14 +91,14 @@ function getValue(meter_id, callback) {
     }, function (err, res, body) {
 
         var data = JSON.parse(body);
-        if (data.authentication == false) {
+        if (data.authentication === false || data.authentication === "false") {
             adapter.log.error("auth failure");
             getAuthCookie(getMeters);
             return;
         }
 
         var idx = ('0' + (meter_id + 1)).slice(-2);
-        adapter.setState(meters[meter_id], parseFloat((data[idx + "_power"] * 1000).toFixed(1)))
+        adapter.setState(meters[meter_id], parseFloat((data[idx + "_power"] * 1000).toFixed(1)));
 
         callback();
 

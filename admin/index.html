@@ -10,11 +10,34 @@
 <script type="text/javascript" src="../../js/adapter-settings.js"></script>
 
 <script type="text/javascript">
+    systemDictionary = {
+        "password": {"en": "Password:",  "de": "Kennwort:",  "ru": "Пароль:"},
+        "host":     {"en": "Host:",      "de": "Host:",      "ru": "Хост:"},
+        "pause":    {"en": "Pause(ms):", "de": "Pause(ms):", "ru": "Порт:"}
+    };
 
-     function load(settings) {
+    function load(settings) {
+        changed = false;
+        $('#save').button("disable");
         for (var key in settings) {
-            // example: select elements with id=key and class=value and insert value
-            $('#' + key + '.value').val(settings[key]);
+            setValue(key, settings[key]);
+        }
+    }
+    function setValue(id, value) {
+        // example: select elements with id=key and class=value and insert value
+        if ($('#' + id + '.value').attr('type') == 'checkbox') {
+            $('#' + id + '.value').prop('checked', value).change(function() {
+                changed = true;
+                $('#save').button("enable");
+            });
+        } else {
+            $('#' + id + '.value').val(value).change(function() {
+                changed = true;
+                $('#save').button("enable");
+            }).keyup(function() {
+                changed = true;
+                $('#save').button("enable");
+            });
         }
     }
 
@@ -24,6 +47,8 @@
             var $this = $(this);
             obj[$this.attr('id')] = $this.val();
         });
+        changed = false;
+        $('#save').button("disable");
         callback(obj);
     }
 </script>
@@ -31,14 +56,16 @@
 <div id="adapter-container">
 
     <table><tr>
-        <td><img src="example.png"/></td>
+        <td><img src="bcontrol.png"/></td>
         <td><h3 class="translate"><a href="http://www.b-control.com/" target="_blank">B-control</a> Energy Manager</h3></td>
     </tr></table>
-    <p>
-        <span class="translate">host</span> <input class="value" id="host"/><br>
-        <span class="translate">pause</span> <input class="value" id="pause"/><br>
-        <span class="translate">password</span> <input class="value" id="pass"/><br>
-    </p>
+
+    <br><hr>
+    <table>
+        <tr><td class="translate">host</td><td><input class="value" id="host"/></td></tr>
+        <tr><td class="translate">pause</td><td><input class="value" id="pause"/></td></tr>
+        <tr><td class="translate">password</td><td><input class="value" id="password"/></td></tr>
+    </table>
 
 </div>
 </html>
