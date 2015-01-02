@@ -3,19 +3,17 @@
 "use strict";
 
 var request =       require('request');
-var cookieJar =     request.jar();
+var utils =         require(__dirname + '/lib/utils'); // Get common adapter utils
+vvar cookieJar =    request.jar();
 var meters =        [];
 var meter_index =   0;
 var numMeters;
 
-var adapter = require(__dirname + '/../../lib/adapter.js')({
-
+var adapter = utils.adapter({
     name: 'b-control-em',
-
     ready: function () {
         getAuthCookie(getMeters);
     }
-
 });
 
 function getAuthCookie(callback) {

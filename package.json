@@ -1,7 +1,7 @@
 {
   "name": "iobroker.b-control-em",
   "description": "B-control Energy Manager",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "author": "hobbyquaker <hq@ccu.io>",
   "contributors": [
     "hobbyquaker <hq@ccu.io>",

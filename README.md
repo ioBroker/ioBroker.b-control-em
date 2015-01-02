@@ -7,8 +7,10 @@
 
 ## Changelog
 
-#### 0.0.3
+#### 0.1.0
+* (bluefox) enable npm install
 
+#### 0.0.3
 * (hobbyquaker) extendObject instead of setObject
 
 ## License
