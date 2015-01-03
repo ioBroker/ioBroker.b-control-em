@@ -7,6 +7,9 @@
 
 ## Changelog
 
+#### 0.1.1
+* (Heinzelmaennchen) fix errors in main.js
+
 #### 0.1.0
 * (bluefox) enable npm install
 
