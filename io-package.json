@@ -1,7 +1,7 @@
 {
     "common": {
         "name":                     "b-control-em",
-        "version": "0.1.0",
+        "version": "0.1.1",
         "title":                    "B-control Energy Manager",
         "desc":                     "Polls data from B-control Energy Manager",
         "platform":                 "javascript/Node.js",

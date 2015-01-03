@@ -4,7 +4,7 @@
 
 var request =       require('request');
 var utils =         require(__dirname + '/lib/utils'); // Get common adapter utils
-vvar cookieJar =    request.jar();
+var cookieJar =     request.jar();
 var meters =        [];
 var meter_index =   0;
 var numMeters;
@@ -52,21 +52,21 @@ function getMeters(callback) {
             var obj = {
                 type:       'state',
                 common: {
-                    name:   (data[i].label == "Teridian" ? 'Gesamtverbrauch' : data[i].label),
+                    name:   data[i].label,
                     unit:   'W',
                     type:   'number',
                     role:   'value.power'
                 },
                 native: {
-                    label:  data[i].label,
-                    serial: data[i].serial,
+                    label:  data[i].label + "_" + data[i].serial,
+                    serial: data[i].label + "_" + data[i].serial,
                     model:  data[i].model,
                     type:   data[i].type
                 }
             };
-            adapter.log.info('add/update object ' + data[i].serial);
-            adapter.extendObject(data[i].serial, obj);
-            meters[i] = data[i].serial;
+            adapter.log.info('add/update object ' + data[i].label);
+            adapter.extendObject(data[i].label + "_" + data[i].serial, obj);
+            meters[i] = data[i].label + "_" + data[i].serial;
         }
         startLoop();
 
