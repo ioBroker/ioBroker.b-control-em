@@ -13,6 +13,7 @@
             "hobbyquaker <hq@ccu.io>"
         ],
         "license":                  "MIT",
+        "type":                     "hardware",
         "readme":                   "https://github.com/ioBroker/ioBroker.b-control-em/blob/master/README.md",
         "keywords":                 ["B-control", "bcontrol", "energy", "manager", "Energy Manager", "Busch-Jäger", "EM", "metering", "power", "consumption", "smartmeter"]
     },
