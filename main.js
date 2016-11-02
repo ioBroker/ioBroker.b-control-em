@@ -175,7 +175,7 @@ function getValue(index, callback) {
 
         // old version
         var idx;
-        if (mid[index].id < 10) {
+        if (mid[index].id < 9) {
             idx = '0' + (mid[index].id + 1);
         } else {
             idx = (mid[index].id + 1);
