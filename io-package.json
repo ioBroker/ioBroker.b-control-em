@@ -1,7 +1,14 @@
 {
     "common": {
         "name":                     "b-control-em",
-        "version": "0.1.1",
+        "version": "0.2.0",
+        "news": {
+            "0.2.0": {
+                "en": "Performance optimisation",
+                "de": "Performance optimisation",
+                "ru": "Performance optimisation"
+            }
+        },
         "title":                    "B-control Energy Manager",
         "desc":                     "Polls data from B-control Energy Manager",
         "platform":                 "javascript/Node.js",

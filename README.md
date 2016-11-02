@@ -1,11 +1,17 @@
+![Logo](admin/bcontrol.png)
 # ioBroker.b-control-em
+===================
+
+[![NPM version](http://img.shields.io/npm/v/iobroker.bcontrol.svg)](https://www.npmjs.com/package/iobroker.bcontrol)
+[![Downloads](https://img.shields.io/npm/dm/iobroker.bcontrol.svg)](https://www.npmjs.com/package/iobroker.bcontrol)
+
+[![NPM](https://nodei.co/npm/iobroker.bcontrol.png?downloads=true)](https://nodei.co/npm/iobroker.bcontrol/)
 
 [B-Control](http://www.b-control.com/) Energy Manager
 
-
-
-
 ## Changelog
+#### 0.2.0
+* (bluefox) performance optimisation
 
 #### 0.1.1
 * (Heinzelmaennchen) fix errors in main.js
@@ -20,7 +26,7 @@
 
 The MIT License (MIT)
 
-Copyright (c) 2014 hobbyquaker
+Copyright (c) 2014-2016 hobbyquaker
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

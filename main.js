@@ -1,23 +1,48 @@
-/* jshint -W097 */// jshint strict:false
+/* jshint -W097 */
+// jshint strict:false
 /*jslint node: true */
-"use strict";
+'use strict';
 
-var request =       require('request');
-var utils =         require(__dirname + '/lib/utils'); // Get common adapter utils
-var cookieJar =     request.jar();
-var meters =        [];
-var meter_index =   0;
-var numMeters;
-
+var request    = require('request');
+var utils      = require(__dirname + '/lib/utils'); // Get common adapter utils
+var cookieJar  = request.jar();
+var meterIndex = 0;
+var mid        = [];
+var lang       = 'NameDe';
+var tasks      = [];
+var processed  = {};
+var channelNames = {
+    NameDe: 'Kanal',
+    NameEn: 'Channel'
+};
 var adapter = utils.adapter({
     name: 'b-control-em',
     ready: function () {
-        getAuthCookie(getMeters);
+        adapter.getForeignObjects('system.config', function (err, obj) {
+            if (obj && obj.common &&
+                (obj.common.language === 'en' || obj.common.language === 'ru')) {
+                lang = 'NameEn';
+            }
+            getAuthCookie(getMeters);
+        });
     }
 });
 
+var obisDict = require(__dirname + '/lib/obisdictionary.json');
+
+var mapping = {};
+function getMapping () {
+    var len = obisDict.length;
+
+    for (var j = 0; j < len; j++) {
+        mapping[obisDict[j].State] = obisDict[j];
+    }
+}
+getMapping();
+    
 function getAuthCookie(callback) {
-    adapter.log.info("login on " + adapter.config.host);
+    adapter.log.debug('login on ' + adapter.config.host);
+
     request.get({
         url: 'http://' + adapter.config.host + '/index.php',
         jar: cookieJar
@@ -31,81 +56,141 @@ function getAuthCookie(callback) {
     });
 }
 
+function processTasks() {
+    if (tasks.length) {
+        var task = tasks.pop();
+        adapter.getObject(task._id, function (err, obj) {
+            if (!obj) {
+                adapter.setObject(task._id, task, function (err) {
+                   setTimeout(processTasks, 0);
+                });
+            } else {
+                setTimeout(processTasks, 0);
+            }
+        });
+    }
+}
+
 function getMeters(callback) {
 
     request.get({
         url: 'http://' + adapter.config.host + '/mum-webservice/meters.php',
         jar: cookieJar
     }, function (err, res, body) {
-        var data = JSON.parse(body);
-        data = data.meters;
-        if (data.authentication === false || data.authentication === "false") {
-            adapter.log.error("auth failure");
-            setTimeout(function () {
-                getAuthCookie(getMeters);
-            }, 60000);
+        var sensor;
+        try {
+            sensor = JSON.parse(body);
+        } catch (e) {
+            adapter.log.error('Cannot parse answer meters list');
+            stop();
             return;
         }
-        adapter.log.info("found " + data.length + " sensors");
-        numMeters = data.length;
-        for (var i = 0; i < data.length; i++) {
-            var obj = {
-                type:       'state',
-                common: {
-                    name:   data[i].label,
-                    unit:   'W',
-                    type:   'number',
-                    role:   'value.power'
-                },
-                native: {
-                    label:  data[i].label + "_" + data[i].serial,
-                    serial: data[i].label + "_" + data[i].serial,
-                    model:  data[i].model,
-                    type:   data[i].type
-                }
-            };
-            adapter.log.info('add/update object ' + data[i].label);
-            adapter.extendObject(data[i].label + "_" + data[i].serial, obj);
-            meters[i] = data[i].label + "_" + data[i].serial;
-        }
-        startLoop();
+        sensor = sensor.meters;
+        adapter.log.debug('found ' + sensor.length + ' channel');
 
+        for (var i = 0; i < sensor.length; i++) {
+            var obj = {
+                type: 'state',
+                common: {
+                    name: sensor[i].label,
+                    unit: 'W',
+                    type: 'number',
+                    role: 'value.power'
+                },
+                native: sensor[i]
+            };
+            sensor[i].label = sensor[i].label.replace(/[.\s]+/g, '_');
+            obj._id = sensor[i].label;
+            tasks.push(obj);
+
+            mid.push({id: sensor[i].id, label: sensor[i].label});
+        }
+        processTasks();
+        startLoop();
     });
 }
 
 function startLoop() {
-    if (++meter_index >= numMeters) meter_index = 0;
-    getValue(meter_index, function () {
+    if (meterIndex >= mid.length) meterIndex = 0;
+
+    getValue(meterIndex, function () {
+        meterIndex++;
         setTimeout(startLoop, adapter.config.pause);
     });
 }
 
-function getValue(meter_id, callback) {
+function getValue(index, callback) {
     request.post({
-
         jar: cookieJar,
-        url: 'http://' + adapter.config.host + '/mum-webservice/consumption.php?meter_id=' + meter_id
-
+        url: 'http://' + adapter.config.host + '/mum-webservice/consumption.php?meter_id=' + mid[index].id
     }, function (err, res, body) {
-
-        var data = JSON.parse(body);
-        if (data.authentication === false || data.authentication === "false") {
-            adapter.log.error("auth failure");
-            getAuthCookie(getMeters);
+        var sensor = JSON.parse(body);
+        var start = false;
+        if (sensor.authentication === false || sensor.authentication === 'false') {
+            adapter.log.error('auth failure');
+            setTimeout(getAuthCookie, 0, getMeters);
             return;
         }
 
-        var idx = ('0' + (meter_id + 1)).slice(-2);
-        adapter.setState(meters[meter_id], parseFloat((data[idx + "_power"] * 1000).toFixed(1)));
+        if (sensor.hasOwnProperty('registers')) {
+            var numReg = sensor.registers.length;
+            
+            for (var i = 0; i < numReg; i++) {
+                if (sensor.registers[i].register) {
+                    var dict = mapping[sensor.registers[i].register];
+                    if (!dict) {
+                        if (!processed[mapping[sensor.registers[i].register]]) {
+                            adapter.log.warn('No dictionary for "' + sensor.registers[i].register + '"');
+                            processed[mapping[sensor.registers[i].register]] = true;
+                        }
+                        continue;
+                    }
+
+                    if (!processed[mid[index].label + '.' + dict[lang]]) {
+                        processed[mid[index].label + '.' + dict[lang]] = true;
+
+                        var obj = {
+                            type: 'state',
+                            common: {
+                                name: dict[lang],
+                                unit: dict.Unit,
+                                type: 'number',
+                                role: 'value.power'
+                            },
+                            native: {}
+                        };
+                        dict[lang] = dict[lang].replace(/[.\s]+/g, '_');
+                        obj._id    = mid[index].label + '_' + channelNames[lang] + '.' + dict[lang];
+
+                        if (!tasks.length) start = true;
+                        tasks.push(obj);
+                    }
+
+                    adapter.setState(mid[index].label + '_' + channelNames[lang] + '.' + dict[lang], parseFloat(sensor.registers[i].value), true);
+                }
+            }
+        } else {
+            adapter.log.info('no Registers found');
+        }
+
+        // old version
+        var idx;
+        if (mid[index].id < 10) {
+            idx = '0' + (mid[index].id + 1);
+        } else {
+            idx = (mid[index].id + 1);
+        }
+        adapter.setState(mid[index].label, parseFloat(sensor[idx + '_power'] * 1000), true);
+
+        if (start) processTasks();
 
         callback();
-
     });
 }
 
 
 function stop() {
-    adapter.log.info("adapter b-control-em terminating");
+    adapter.log.info('adapter b-control-em terminating');
     process.exit();
 }
 
