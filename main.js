@@ -42,6 +42,7 @@ getMapping();
     
 function getAuthCookie(callback) {
     adapter.log.debug('login on ' + adapter.config.host);
+    adapter.setState('info.connection', false, true);
 
     request.get({
         url: 'http://' + adapter.config.host + '/index.php',
@@ -51,6 +52,7 @@ function getAuthCookie(callback) {
             adapter.log.error('auth failed');
             stop();
         } else {
+            adapter.setState('info.connection', true, true);
             callback();
         }
     });
@@ -190,6 +192,7 @@ function getValue(index, callback) {
 
 
 function stop() {
+    adapter.setState('info.connection', false, true);
     adapter.log.info('adapter b-control-em terminating');
     process.exit();
 }

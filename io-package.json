@@ -31,5 +31,42 @@
     },
     "objects": [
 
+    ],
+    "instanceObjects": [
+        {
+            "_id":  "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id":  "info.connection",
+            "type": "state",
+            "common": {
+                "role":  "indicator.connected",
+                "name":  "If connected to my sensors",
+                "type":  "boolean",
+                "read":  true,
+                "write": false,
+                "def":   false
+            },
+            "native": {}
+        },
+        {
+            "_id":  "inclusionOn",
+            "type": "state",
+            "common": {
+                "role":  "state",
+                "name":  "Inclusion mode activated",
+                "desc":  "If inclusion mode on or off",
+                "type":  "boolean",
+                "read":  true,
+                "write": true,
+                "def":   false
+            },
+            "native": {}
+        }
     ]
 }
