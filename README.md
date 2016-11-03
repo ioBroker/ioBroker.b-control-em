@@ -10,7 +10,7 @@
 [B-Control](http://www.b-control.com/) Energy Manager
 
 ## Changelog
-#### 0.2.0
+#### 0.2.1
 * (bluefox) performance optimisation
 
 #### 0.1.1

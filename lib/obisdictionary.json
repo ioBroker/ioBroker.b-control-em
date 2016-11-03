@@ -1,0 +1,356 @@
+[
+  {
+    "State": "1-0:1.4.0*255",
+    "NameEn": "Active power+",
+    "NameDe": "Wirkleistung Bezug",
+    "Unit": "W"
+  },
+  {
+    "State": "1-0:1.8.0*255",
+    "NameEn": "Active energy+",
+    "NameDe": "Wirkenergie Bezug",
+    "Unit": "Wh"
+  },
+  {
+    "State": "1-0:2.4.0*255",
+    "NameEn": "Active power-",
+    "NameDe": "Wirkleistung Einspeisung",
+    "Unit": "W"
+  },
+  {
+    "State": "1-0:2.8.0*255",
+    "NameEn": "Active energy-",
+    "NameDe": "Wirkenergie Einspeisung",
+    "Unit": "Wh"
+  },
+  {
+    "State": "1-0:3.4.0*255",
+    "NameEn": "Reactive power+",
+    "NameDe": "Blindleistung Bezug",
+    "Unit": "var"
+  },
+  {
+    "State": "1-0:3.8.0*255",
+    "NameEn": "Reactive energy+",
+    "NameDe": "Blindenergy Bezug",
+    "Unit": "varh"
+  },
+  {
+    "State": "1-0:4.4.0*255",
+    "NameEn": "Reactive power-",
+    "NameDe": "Blindleistung Einspeisung",
+    "Unit": "var"
+  },
+  {
+    "State": "1-0:4.8.0*255",
+    "NameEn": "Reactive energy-",
+    "NameDe": "Blindenergy Einspeisung",
+    "Unit": "varh"
+  },
+  {
+    "State": "1-0:9.4.0*255",
+    "NameEn": "Apparent power+",
+    "NameDe": "Scheinleistung Bezug",
+    "Unit": "VA"
+  },
+  {
+    "State": "1-0:9.8.0*255",
+    "NameEn": "Apparent energy+",
+    "NameDe": "Scheinenergy Bezug",
+    "Unit": "VAh"
+  },
+  {
+    "State": "1-0:10.4.0*255",
+    "NameEn": "Apparent power-",
+    "NameDe": "Scheinleistung Einspeisung",
+    "Unit": "VA"
+  },
+  {
+    "State": "1-0:10.8.0*255",
+    "NameEn": "Apparent energy-",
+    "NameDe": "Scheinenergy Einspeisung",
+    "Unit": "VAh"
+  },
+  {
+    "State": "1-0:13.4.0*255",
+    "NameEn": "Power factor",
+    "NameDe": "Leistungsfaktor -",
+    "Unit": "cos &Phi;"
+  },
+  {
+    "State": "1-0:14.4.0*255",
+    "NameEn": "Supply frequency",
+    "NameDe": "Netzfrequenz Hz",
+    "Unit": "Hz"
+  },
+  {
+    "State": "1-0:21.4.0*255",
+    "NameEn": "Active power+ (L1)",
+    "NameDe": "Wirkleistung Bezug (L1)",
+    "Unit": "W"
+  },
+  {
+    "State": "1-0:21.8.0*255",
+    "NameEn": "Active energy+ (L1)",
+    "NameDe": "Wirkenergie Bezug (L1)",
+    "Unit": "Wh"
+  },
+  {
+    "State": "1-0:22.4.0*255",
+    "NameEn": "Active power- (L1)",
+    "NameDe": "Wirkleistung Einspeisung (L1)",
+    "Unit": "W"
+  },
+  {
+    "State": "1-0:22.8.0*255",
+    "NameEn": "Active energy- (L1)",
+    "NameDe": "Wirkenergie Einspeisung (L1)",
+    "Unit": "Wh"
+  },
+  {
+    "State": "1-0:23.4.0*255",
+    "NameEn": "Reactive power+ (L1)",
+    "NameDe": "Blindleistung Bezug (L1)",
+    "Unit": "var"
+  },
+  {
+    "State": "1-0:23.8.0*255",
+    "NameEn": "Reactive energy+ (L1)",
+    "NameDe": "Blindenergy Bezug (L1)",
+    "Unit": "varh"
+  },
+  {
+    "State": "1-0:24.4.0*255",
+    "NameEn": "Reactive power- (L1)",
+    "NameDe": "Blindleistung Einspeisung (L1)",
+    "Unit": "var"
+  },
+  {
+    "State": "1-0:24.8.0*255",
+    "NameEn": "Reactive energy- (L1)",
+    "NameDe": "Blindenergy Einspeisung (L1)",
+    "Unit": "varh"
+  },
+  {
+    "State": "1-0:29.4.0*255",
+    "NameEn": "Apparent power+ (L1)",
+    "NameDe": "Scheinleistung Bezug (L1)",
+    "Unit": "VA"
+  },
+  {
+    "State": "1-0:29.8.0*255",
+    "NameEn": "Apparent energy+ (L1)",
+    "NameDe": "Scheinenergy Bezug (L1)",
+    "Unit": "VAh"
+  },
+  {
+    "State": "1-0:30.4.0*255",
+    "NameEn": "Apparent power- (L1)",
+    "NameDe": "Scheinleistung Einspeisung (L1)",
+    "Unit": "VA"
+  },
+  {
+    "State": "1-0:30.8.0*255",
+    "NameEn": "Apparent energy- (L1)",
+    "NameDe": "Scheinenergy Einspeisung (L1)",
+    "Unit": "VAh"
+  },
+  {
+    "State": "1-0:31.4.0*255",
+    "NameEn": "Current (L1)",
+    "NameDe": "Strom (L1)",
+    "Unit": "A"
+  },
+  {
+    "State": "1-0:32.4.0*255",
+    "NameEn": "Voltage (L1)",
+    "NameDe": "Spannung (L1)",
+    "Unit": "V"
+  },
+  {
+    "State": "1-0:33.4.0*255",
+    "NameEn": "Power factor (L1)",
+    "NameDe": "Leistungsfaktor (L1) -",
+    "Unit": "cos &Phi;"
+  },
+  {
+    "State": "1-0:41.4.0*255",
+    "NameEn": "Active power+ (L2)",
+    "NameDe": "Wirkleistung Bezug (L2)",
+    "Unit": "W"
+  },
+  {
+    "State": "1-0:41.8.0*255",
+    "NameEn": "Active energy+ (L2)",
+    "NameDe": "Wirkenergie Bezug (L2)",
+    "Unit": "Wh"
+  },
+  {
+    "State": "1-0:42.4.0*255",
+    "NameEn": "Active power- (L2)",
+    "NameDe": "Wirkleistung Einspeisung (L2)",
+    "Unit": "W"
+  },
+  {
+    "State": "1-0:42.8.0*255",
+    "NameEn": "Active energy- (L2)",
+    "NameDe": "Wirkenergie Einspeisung (L2)",
+    "Unit": "Wh"
+  },
+  {
+    "State": "1-0:43.4.0*255",
+    "NameEn": "Reactive power+ (L2)",
+    "NameDe": "Blindleistung Bezug (L2)",
+    "Unit": "var"
+  },
+  {
+    "State": "1-0:43.8.0*255",
+    "NameEn": "Reactive energy+ (L2)",
+    "NameDe": "Blindenergy Bezug (L2)",
+    "Unit": "varh"
+  },
+  {
+    "State": "1-0:44.4.0*255",
+    "NameEn": "Reactive power- (L2)",
+    "NameDe": "Blindleistung Einspeisung (L2)",
+    "Unit": "var"
+  },
+  {
+    "State": "1-0:44.8.0*255",
+    "NameEn": "Reactive energy- (L2)",
+    "NameDe": "Blindenergy Einspeisung (L2)",
+    "Unit": "varh"
+  },
+  {
+    "State": "1-0:49.4.0*255",
+    "NameEn": "Apparent power+ (L2)",
+    "NameDe": "Scheinleistung Bezug (L2)",
+    "Unit": "VA"
+  },
+  {
+    "State": "1-0:49.8.0*255",
+    "NameEn": "Apparent energy+ (L2)",
+    "NameDe": "Scheinenergy Bezug (L2)",
+    "Unit": "VAh"
+  },
+  {
+    "State": "1-0:50.4.0*255",
+    "NameEn": "Apparent power- (L2)",
+    "NameDe": "Scheinleistung Einspeisung (L2)",
+    "Unit": "VA"
+  },
+  {
+    "State": "1-0:50.8.0*255",
+    "NameEn": "Apparent energy- (L2)",
+    "NameDe": "Scheinenergy Einspeisung (L2)",
+    "Unit": "VAh"
+  },
+  {
+    "State": "1-0:51.4.0*255",
+    "NameEn": "Current (L2)",
+    "NameDe": "Strom (L2)",
+    "Unit": "A"
+  },
+  {
+    "State": "1-0:52.4.0*255",
+    "NameEn": "Voltage (L2)",
+    "NameDe": "Spannung (L2)",
+    "Unit": "V"
+  },
+  {
+    "State": "1-0:53.4.0*255",
+    "NameEn": "Power factor (L2)",
+    "NameDe": "Leistungsfaktor (L2) -",
+    "Unit": "cos &Phi;"
+  },
+  {
+    "State": "1-0:61.4.0*255",
+    "NameEn": "Active power+ (L3)",
+    "NameDe": "Wirkleistung Bezug (L3)",
+    "Unit": "W"
+  },
+  {
+    "State": "1-0:61.8.0*255",
+    "NameEn": "Active energy+ (L3)",
+    "NameDe": "Wirkenergie Bezug (L3)",
+    "Unit": "Wh"
+  },
+  {
+    "State": "1-0:62.4.0*255",
+    "NameEn": "Active power- (L3)",
+    "NameDe": "Wirkleistung Einspeisung (L3)",
+    "Unit": "W"
+  },
+  {
+    "State": "1-0:62.8.0*255",
+    "NameEn": "Active energy- (L3)",
+    "NameDe": "Wirkenergie Einspeisung (L3)",
+    "Unit": "Wh"
+  },
+  {
+    "State": "1-0:63.4.0*255",
+    "NameEn": "Reactive power+ (L3)",
+    "NameDe": "Blindleistung Bezug (L3)",
+    "Unit": "var"
+  },
+  {
+    "State": "1-0:63.8.0*255",
+    "NameEn": "Reactive energy+ (L3)",
+    "NameDe": "Blindenergy Bezug (L3)",
+    "Unit": "varh"
+  },
+  {
+    "State": "1-0:64.4.0*255",
+    "NameEn": "Reactive power- (L3)",
+    "NameDe": "Blindleistung Einspeisung (L3)",
+    "Unit": "var"
+  },
+  {
+    "State": "1-0:64.8.0*255",
+    "NameEn": "Reactive energy- (L3)",
+    "NameDe": "Blindenergy Einspeisung (L3)",
+    "Unit": "varh"
+  },
+  {
+    "State": "1-0:69.4.0*255",
+    "NameEn": "Apparent power+ (L3)",
+    "NameDe": "Scheinleistung Bezug (L3)",
+    "Unit": "VA"
+  },
+  {
+    "State": "1-0:69.8.0*255",
+    "NameEn": "Apparent energy+ (L3)",
+    "NameDe": "Scheinenergy Bezug (L3)",
+    "Unit": "VAh"
+  },
+  {
+    "State": "1-0:70.4.0*255",
+    "NameEn": "Apparent power- (L3)",
+    "NameDe": "Scheinleistung Einspeisung (L3)",
+    "Unit": "VA"
+  },
+  {
+    "State": "1-0:70.8.0*255",
+    "NameEn": "Apparent energy- (L3)",
+    "NameDe": "Scheinenergy Einspeisung (L3)",
+    "Unit": "VAh"
+  },
+  {
+    "State": "1-0:71.4.0*255",
+    "NameEn": "Current (L3)",
+    "NameDe": "Strom (L3)",
+    "Unit": "A"
+  },
+  {
+    "State": "1-0:72.4.0*255",
+    "NameEn": "Voltage (L3)",
+    "NameDe": "Spannung (L3)",
+    "Unit": "V"
+  },
+  {
+    "State": "1-0:73.4.0*255",
+    "NameEn": "Power factor (L3)",
+    "NameDe": "Leistungsfaktor (L3) -",
+    "Unit": "cos &Phi;"
+  }
+]
