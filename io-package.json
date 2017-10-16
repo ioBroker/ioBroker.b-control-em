@@ -1,6 +1,6 @@
 {
     "common": {
-        "name":                     "b-control-em",
+        "name": "b-control-em",
         "version": "0.2.1",
         "news": {
             "0.2.1": {
@@ -9,32 +9,42 @@
                 "ru": "Performance optimisation"
             }
         },
-        "title":                    "B-control Energy Manager",
-        "desc":                     "Polls data from B-control Energy Manager",
-        "platform":                 "javascript/Node.js",
-        "mode":                     "daemon",
-        "icon":                     "bcontrol.png",
-        "extIcon":                  "https://raw.githubusercontent.com/ioBroker/ioBroker.b-control-em/master/admin/bcontrol.png",
-        "loglevel":                 "info",
+        "title": "B-control Energy Manager",
+        "desc": "Polls data from B-control Energy Manager",
+        "platform": "javascript/Node.js",
+        "mode": "daemon",
+        "icon": "bcontrol.png",
+        "extIcon": "https://raw.githubusercontent.com/ioBroker/ioBroker.b-control-em/master/admin/bcontrol.png",
+        "loglevel": "info",
         "authors": [
             "hobbyquaker <hq@ccu.io>"
         ],
-        "license":                  "MIT",
-        "type":                     "hardware",
-        "readme":                   "https://github.com/ioBroker/ioBroker.b-control-em/blob/master/README.md",
-        "keywords":                 ["B-control", "bcontrol", "energy", "manager", "Energy Manager", "Busch-Jäger", "EM", "metering", "power", "consumption", "smartmeter"]
+        "license": "MIT",
+        "type": "energy",
+        "readme": "https://github.com/ioBroker/ioBroker.b-control-em/blob/master/README.md",
+        "keywords": [
+            "B-control",
+            "bcontrol",
+            "energy",
+            "manager",
+            "Energy Manager",
+            "Busch-Jäger",
+            "EM",
+            "metering",
+            "power",
+            "consumption",
+            "smartmeter"
+        ]
     },
     "native": {
         "host": "172.16.23.138",
         "pause": 6500,
         "pass": ""
     },
-    "objects": [
-
-    ],
+    "objects": [],
     "instanceObjects": [
         {
-            "_id":  "info",
+            "_id": "info",
             "type": "channel",
             "common": {
                 "name": "Information"
@@ -42,29 +52,29 @@
             "native": {}
         },
         {
-            "_id":  "info.connection",
+            "_id": "info.connection",
             "type": "state",
             "common": {
-                "role":  "indicator.connected",
-                "name":  "If connected to my sensors",
-                "type":  "boolean",
-                "read":  true,
+                "role": "indicator.connected",
+                "name": "If connected to my sensors",
+                "type": "boolean",
+                "read": true,
                 "write": false,
-                "def":   false
+                "def": false
             },
             "native": {}
         },
         {
-            "_id":  "inclusionOn",
+            "_id": "inclusionOn",
             "type": "state",
             "common": {
-                "role":  "state",
-                "name":  "Inclusion mode activated",
-                "desc":  "If inclusion mode on or off",
-                "type":  "boolean",
-                "read":  true,
+                "role": "state",
+                "name": "Inclusion mode activated",
+                "desc": "If inclusion mode on or off",
+                "type": "boolean",
+                "read": true,
                 "write": true,
-                "def":   false
+                "def": false
             },
             "native": {}
         }
