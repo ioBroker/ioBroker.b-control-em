@@ -15,7 +15,7 @@ var channelNames = {
     NameDe: 'Kanal',
     NameEn: 'Channel'
 };
-var adapter = utils.adapter({
+var adapter = utils.Adapter({
     name: 'b-control-em',
     ready: function () {
         adapter.getForeignObjects('system.config', function (err, obj) {
