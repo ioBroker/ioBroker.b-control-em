@@ -4,7 +4,7 @@
 'use strict';
 
 var request    = require('request');
-var utils      = require(__dirname + '/lib/utils'); // Get common adapter utils
+var utils = require('@iobroker/adapter-core'); // Get common adapter utils
 var cookieJar  = request.jar();
 var meterIndex = 0;
 var mid        = [];
