@@ -2,7 +2,7 @@
 # ioBroker.b-control-em
 ===================
 
-[![NPM version](http://img.shields.io/npm/v/iobroker.bcontrol.svg)](https://www.npmjs.com/package/iobroker.bcontrol)
+![Number of Installations](http://iobroker.live/badges/b-control-em-installed.svg) ![Number of Installations](http://iobroker.live/badges/b-control-em-stable.svg) [![NPM version](http://img.shields.io/npm/v/iobroker.bcontrol.svg)](https://www.npmjs.com/package/iobroker.bcontrol)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.bcontrol.svg)](https://www.npmjs.com/package/iobroker.bcontrol)
 
 [![NPM](https://nodei.co/npm/iobroker.bcontrol.png?downloads=true)](https://nodei.co/npm/iobroker.bcontrol/)
