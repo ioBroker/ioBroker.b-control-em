@@ -10,7 +10,7 @@
             }
         },
         "title": "B-control Energy Manager",
-        "ddesc":                     {
+        "desc": {
             "en": "Polls data from B-control Energy Manager",
             "de": "Holt Daten vom B-control Energy Manager",
             "ru": "Polls data from B-control Energy Manager"
