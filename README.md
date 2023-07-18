@@ -10,16 +10,20 @@
 [B-Control](http://www.b-control.com/) Energy Manager
 
 ## Changelog
-#### 0.2.1
+
+## __WORK IN PROGRESS__
+* (Apollon77) Update for js-controller 5.0 
+
+### 0.2.1
 * (bluefox) performance optimisation
 
-#### 0.1.1
+### 0.1.1
 * (Heinzelmaennchen) fix errors in main.js
 
-#### 0.1.0
+### 0.1.0
 * (bluefox) enable npm install
 
-#### 0.0.3
+### 0.0.3
 * (hobbyquaker) extendObject instead of setObject
 
 ## License
