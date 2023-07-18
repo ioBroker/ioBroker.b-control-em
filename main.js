@@ -15,6 +15,8 @@ var channelNames = {
     NameDe: 'Kanal',
     NameEn: 'Channel'
 };
+var timeout1, timeout2;
+
 var adapter = utils.Adapter({
     name: 'b-control-em',
     ready: function () {
@@ -25,6 +27,10 @@ var adapter = utils.Adapter({
             }
             getAuthCookie(getMeters);
         });
+    },
+    unload: function (callback) {
+        clearTimeout(timeout1);
+        clearTimeout(timeout2);
     }
 });
 
@@ -39,7 +45,7 @@ function getMapping () {
     }
 }
 getMapping();
-    
+
 function getAuthCookie(callback) {
     adapter.log.debug('login on ' + adapter.config.host);
     adapter.setState('info.connection', false, true);
@@ -64,10 +70,10 @@ function processTasks() {
         adapter.getObject(task._id, function (err, obj) {
             if (!obj) {
                 adapter.setObject(task._id, task, function (err) {
-                   setTimeout(processTasks, 0);
+                   setImmediate(processTasks);
                 });
             } else {
-                setTimeout(processTasks, 0);
+                setImmediate(processTasks);
             }
         });
     }
@@ -117,7 +123,8 @@ function startLoop() {
 
     getValue(meterIndex, function () {
         meterIndex++;
-        setTimeout(startLoop, adapter.config.pause);
+        clearTimeout(timeout1);
+        timeout1 = setTimeout(startLoop, adapter.config.pause);
     });
 }
 
@@ -130,13 +137,14 @@ function getValue(index, callback) {
         var start = false;
         if (sensor.authentication === false || sensor.authentication === 'false') {
             adapter.log.error('auth failure');
-            setTimeout(getAuthCookie, 0, getMeters);
+            clearTimeout(timeout2);
+            timeout2 = setTimeout(getAuthCookie, 0, getMeters);
             return;
         }
 
         if (sensor.hasOwnProperty('registers')) {
             var numReg = sensor.registers.length;
-            
+
             for (var i = 0; i < numReg; i++) {
                 if (sensor.registers[i].register) {
                     var dict = mapping[sensor.registers[i].register];
