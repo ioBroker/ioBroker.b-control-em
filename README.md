@@ -11,7 +11,7 @@
 
 ## Changelog
 
-## __WORK IN PROGRESS__
+### __WORK IN PROGRESS__
 * (Apollon77) Update for js-controller 5.0 
 
 ### 0.2.1
