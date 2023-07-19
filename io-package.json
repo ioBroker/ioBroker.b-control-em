@@ -10,12 +10,17 @@
             }
         },
         "title": "B-control Energy Manager",
+        "titleLang": {
+            "en": "B-control Energy Manager",
+            "de": "B-control Energy Manager",
+            "ru": "B-control Energy Manager"
+        },
         "desc": {
             "en": "Polls data from B-control Energy Manager",
             "de": "Holt Daten vom B-control Energy Manager",
             "ru": "Polls data from B-control Energy Manager"
         },
-        "platform": "javascript/Node.js",
+        "platform": "Javascript/Node.js",
         "mode": "daemon",
         "icon": "bcontrol.png",
         "extIcon": "https://raw.githubusercontent.com/ioBroker/ioBroker.b-control-em/master/admin/bcontrol.png",
