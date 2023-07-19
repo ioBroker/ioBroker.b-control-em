@@ -1,91 +1,104 @@
 {
-    "common": {
-        "name": "b-control-em",
-        "version": "0.3.0",
-        "news": {
-            "0.2.1": {
-                "en": "Performance optimisation",
-                "de": "Performance optimiert",
-                "ru": "Performance optimisation"
-            }
-        },
-        "title": "B-control Energy Manager",
-        "titleLang": {
-            "en": "B-control Energy Manager",
-            "de": "B-control Energy Manager",
-            "ru": "B-control Energy Manager"
-        },
-        "desc": {
-            "en": "Polls data from B-control Energy Manager",
-            "de": "Holt Daten vom B-control Energy Manager",
-            "ru": "Polls data from B-control Energy Manager"
-        },
-        "platform": "Javascript/Node.js",
-        "mode": "daemon",
-        "icon": "bcontrol.png",
-        "extIcon": "https://raw.githubusercontent.com/ioBroker/ioBroker.b-control-em/master/admin/bcontrol.png",
-        "loglevel": "info",
-        "authors": [
-            "hobbyquaker <hq@ccu.io>"
-        ],
-        "license": "MIT",
-        "type": "energy",
-        "readme": "https://github.com/ioBroker/ioBroker.b-control-em/blob/master/README.md",
-        "keywords": [
-            "B-control",
-            "bcontrol",
-            "energy",
-            "manager",
-            "Energy Manager",
-            "Busch-Jäger",
-            "EM",
-            "metering",
-            "power",
-            "consumption",
-            "smartmeter"
-        ]
+  "common": {
+    "name": "b-control-em",
+    "version": "0.3.1",
+    "news": {
+      "0.3.1": {
+        "en": "Update for js-controller 5.0",
+        "de": "Update für js-controller ANHANG",
+        "ru": "Обновление для js-controller 5,0",
+        "pt": "Atualização para js-controller 5",
+        "nl": "Update voor Js-controller 5.0",
+        "fr": "Update for js-controller 5.0",
+        "it": "Aggiornamento per js-controller 5.0",
+        "es": "Actualización para js-controller 5.0",
+        "pl": "Update for js-controller 5.0",
+        "uk": "Оновлення для js-controller 2.6 км",
+        "zh-cn": "A. 控制容忍的最新情况 5.0"
+      },
+      "0.2.1": {
+        "en": "Performance optimisation",
+        "de": "Performance optimiert",
+        "ru": "Performance optimisation"
+      }
     },
-    "native": {
-        "host": "172.16.23.138",
-        "pause": 6500,
-        "pass": ""
+    "title": "B-control Energy Manager",
+    "titleLang": {
+      "en": "B-control Energy Manager",
+      "de": "B-control Energy Manager",
+      "ru": "B-control Energy Manager"
     },
-    "objects": [],
-    "instanceObjects": [
-        {
-            "_id": "info",
-            "type": "channel",
-            "common": {
-                "name": "Information"
-            },
-            "native": {}
-        },
-        {
-            "_id": "info.connection",
-            "type": "state",
-            "common": {
-                "role": "indicator.connected",
-                "name": "If connected to my sensors",
-                "type": "boolean",
-                "read": true,
-                "write": false,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "inclusionOn",
-            "type": "state",
-            "common": {
-                "role": "state",
-                "name": "Inclusion mode activated",
-                "desc": "If inclusion mode on or off",
-                "type": "boolean",
-                "read": true,
-                "write": true,
-                "def": false
-            },
-            "native": {}
-        }
+    "desc": {
+      "en": "Polls data from B-control Energy Manager",
+      "de": "Holt Daten vom B-control Energy Manager",
+      "ru": "Polls data from B-control Energy Manager"
+    },
+    "platform": "Javascript/Node.js",
+    "mode": "daemon",
+    "icon": "bcontrol.png",
+    "extIcon": "https://raw.githubusercontent.com/ioBroker/ioBroker.b-control-em/master/admin/bcontrol.png",
+    "loglevel": "info",
+    "authors": [
+      "hobbyquaker <hq@ccu.io>"
+    ],
+    "license": "MIT",
+    "type": "energy",
+    "readme": "https://github.com/ioBroker/ioBroker.b-control-em/blob/master/README.md",
+    "keywords": [
+      "B-control",
+      "bcontrol",
+      "energy",
+      "manager",
+      "Energy Manager",
+      "Busch-Jäger",
+      "EM",
+      "metering",
+      "power",
+      "consumption",
+      "smartmeter"
     ]
+  },
+  "native": {
+    "host": "172.16.23.138",
+    "pause": 6500,
+    "pass": ""
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "role": "indicator.connected",
+        "name": "If connected to my sensors",
+        "type": "boolean",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "inclusionOn",
+      "type": "state",
+      "common": {
+        "role": "state",
+        "name": "Inclusion mode activated",
+        "desc": "If inclusion mode on or off",
+        "type": "boolean",
+        "read": true,
+        "write": true,
+        "def": false
+      },
+      "native": {}
+    }
+  ]
 }

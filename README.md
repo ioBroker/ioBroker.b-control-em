@@ -10,9 +10,8 @@
 [B-Control](http://www.b-control.com/) Energy Manager
 
 ## Changelog
-
-### __WORK IN PROGRESS__
-* (Apollon77) Update for js-controller 5.0 
+### 0.3.1 (2023-07-19)
+* (Apollon77) Update for js-controller 5.0
 
 ### 0.2.1
 * (bluefox) performance optimisation
