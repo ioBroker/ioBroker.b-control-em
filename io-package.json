@@ -41,7 +41,10 @@
     "authors": [
       "hobbyquaker <hq@ccu.io>"
     ],
-    "license": "MIT",
+    "licenseInformation": {
+      "type": "free",
+      "license": "MIT"
+    },
     "type": "energy",
     "readme": "https://github.com/ioBroker/ioBroker.b-control-em/blob/master/README.md",
     "keywords": [
