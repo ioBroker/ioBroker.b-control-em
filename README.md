@@ -25,6 +25,8 @@
 ### 0.0.3
 * (hobbyquaker) extendObject instead of setObject
 
+[Older changelogs can be found there](CHANGELOG_OLD.md)
+
 ## License
 
 The MIT License (MIT)
