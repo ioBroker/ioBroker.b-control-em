@@ -38,6 +38,7 @@
     "icon": "bcontrol.png",
     "extIcon": "https://raw.githubusercontent.com/ioBroker/ioBroker.b-control-em/master/admin/bcontrol.png",
     "loglevel": "info",
+    "tier": 2,
     "authors": [
       "hobbyquaker <hq@ccu.io>"
     ],
