@@ -10,6 +10,10 @@
 [B-Control](http://www.b-control.com/) Energy Manager
 
 ## Changelog
+
+### **WORK IN PROGRESS**
+- (ioBroker-Bot) Adapter requires js-controller >= 6.0.11 now.
+
 ### 0.3.1 (2023-07-19)
 * (Apollon77) Update for js-controller 5.0
 
