@@ -64,13 +64,22 @@
       {
         "js-controller": ">=6.0.11"
       }
-    ]
+    ],
+    "adminUI": {
+      "config": "json"
+    }
   },
   "native": {
     "host": "172.16.23.138",
     "pause": 6500,
     "pass": ""
   },
+  "encryptedNative": [
+    "pass"
+  ],
+  "protectedNative": [
+    "pass"
+  ],
   "objects": [],
   "instanceObjects": [
     {
