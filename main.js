@@ -124,7 +124,7 @@ function startLoop() {
     getValue(meterIndex, function () {
         meterIndex++;
         clearTimeout(timeout1);
-        timeout1 = setTimeout(startLoop, adapter.config.pause);
+        timeout1 = setTimeout(startLoop, parseInt(adapter.config.pause, 10) || 6500);
     });
 }
 

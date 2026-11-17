@@ -1,0 +1,27 @@
+{
+    "i18n": true,
+    "type": "panel",
+    "items": {
+        "host": {
+            "type": "text",
+            "label": "Host",
+            "sm": 12,
+            "md": 6
+        },
+        "pause": {
+            "type": "number",
+            "label": "Pause (ms)",
+            "min": 1000,
+            "sm": 12,
+            "md": 6,
+            "newLine": true
+        },
+        "pass": {
+            "type": "password",
+            "label": "Password",
+            "sm": 12,
+            "md": 6,
+            "newLine": true
+        }
+    }
+}
