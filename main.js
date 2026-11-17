@@ -17,7 +17,7 @@ var channelNames = {
 };
 var timeout1, timeout2;
 
-var adapter = utils.Adapter({
+var adapter = new utils.Adapter({
     name: 'b-control-em',
     ready: function () {
         adapter.getForeignObjects('system.config', function (err, obj) {
@@ -29,8 +29,12 @@ var adapter = utils.Adapter({
         });
     },
     unload: function (callback) {
-        clearTimeout(timeout1);
-        clearTimeout(timeout2);
+        try {
+            clearTimeout(timeout1);
+            clearTimeout(timeout2);
+        } finally {
+            callback();
+        }
     }
 });
 
